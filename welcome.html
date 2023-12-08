@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome GOA SPORTS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        h1, form {
+            text-align: center;
+            max-width: 500px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input {
+            width: calc(100% - 16px);
+            padding: 8px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome GOA SPORTS</h1>
+    <form>
+        <label for="sport">Enter Sports Name</label>
+        <input type="text" id="sport" name="sport" required><br>
+        <label for="event">Name of Event</label>
+        <input type="text" id="event" name="event" required><br>
+        <label for="players">Enter Total No. of Players</label>
+        <input type="number" id="players" name="players" required><br>
+        <label for="prize">Enter Cash Prize</label>
+        <input type="number" id="prize" name="prize" required><br>
+        <label for="date">Select Time and Date</label>
+        <input type="datetime-local" id="date" name="date" required><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

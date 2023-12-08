@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            text-align: center;
+        }
+        #registerContainer {
+            width: 300px;
+            margin: auto;
+        }
+        #registerForm {
+            padding: 20px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+            border-radius: 20px;
+        }
+        .validation-message {
+            color: red;
+            margin-top: -12px;
+            margin-bottom: 12px;
+            display: none;
+        }
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="registerContainer">
+        <h2>Register</h2>
+        <form id="registerForm" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="sportType">TYPE OF SPORT:</label>
+                <input type="text" id="sportType" name="sportType">
+                <div class="validation-message" id="sportTypeMessage"></div>
+            </div>
+            <div class="form-group">
+                <label for="orgName">NAME OF ORGANIZATION:</label>
+                <input type="text" id="orgName" name="orgName">
+                <div class="validation-message" id="orgNameMessage"></div>
+            </div>
+            <div class="form-group">
+                <label for="email">E-MAIL:</label>
+                <input type="text" id="email" name="email">
+                <div class="validation-message" id="emailMessage"></div>
+            </div>
+            <div class="form-group">
+                <label for="password">SET PASSWORD:</label>
+                <input type="password" id="password" name="password">
+                <div class="validation-message" id="passwordMessage"></div>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            var sportType = document.getElementById("sportType").value;
+            var orgName = document.getElementById("orgName").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            if (sportType === "") {
+                displayValidationMessage("sportTypeMessage", "Please fill out this field.");
+                return false;
+            }
+            if (orgName === "") {
+                displayValidationMessage("orgNameMessage", "Please fill out this field.");
+                return false;
+            }
+            if (email === "") {
+                displayValidationMessage("emailMessage", "Please fill out this field.");
+                return false;
+            }
+            if (password === "") {
+                displayValidationMessage("passwordMessage", "Please fill out this field.");
+                return false;
+            }
+            alert("Registration successful!");
+            return true;
+        }
+        function displayValidationMessage(elementId, message) {
+            var validationMessage = document.getElementById(elementId);
+            validationMessage.innerText = message;
+            validationMessage.style.display = "block";
+            setTimeout(function () {
+                validationMessage.style.display = "none";
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
